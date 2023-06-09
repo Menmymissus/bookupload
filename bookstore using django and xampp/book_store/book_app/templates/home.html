@@ -1,0 +1,47 @@
+<!-- templates/home.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        p {
+            text-align: center;
+        }
+        
+        .link {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Online Book System</h1>
+        <p>Explore our vast collection of books and enjoy a seamless reading experience.</p>
+        <div class="link">
+            <a href="{% url 'book_list' %}">Surf here</a> to view the book list.
+        </div>
+    </div>
+</body>
+</html>

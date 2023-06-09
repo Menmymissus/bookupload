@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+:root {
+  --font-family: 'Manrope', sans-serif;
+
+  --gradient-text: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
+  --gradient-bar: linear-gradient(103.22deg, #AE67FA -13.86%, #F49867 99.55%);
+  
+  --color-bg: #040C18;
+  --color-footer : #031B34;
+  --color-blog: #042c54;
+  --color-text: #81AFDD;
+  --color-subtext: #FF8A71;
+}
+body {
+    background-color: var(--color-bg);
+    font-family: var(--font-family);
+    color: var(--color-text)
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    
+}
+
+li {
+    flex-basis: 20%; /* Adjust the width of each book item */
+    padding: 20px;
+    box-sizing: border-box;
+    border: solid 1px var(--color-text);
+    margin-bottom: 20px; /* Add margin-bottom for separation */
+    margin-right: 30px; /* Add margin-right for separation */
+
+}
+
+h3 {
+    margin: 0;
+}
+
+p {
+    margin: 10px 0;
+}
+
+img {
+    width: 100%; /* Set the desired width */
+    height: 300px; /* Set the desired height */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+.form-fields {
+    margin-bottom: 20px;
+    margin-left: 25%;
+}
+
+.form-fields label {
+    display: block;
+    font-weight: bold;
+    
+}
+
+.form-fields input[type="text"],
+.form-fields textarea {
+    width: 50%;
+    
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 54%;
+
+    
+}
+.button-group {
+    display: inline-flex;
+    justify-content: space-between;
+    height: 20px;
+    
+  }
+  
+  .button-group button {
+    flex: 0 0 auto;
+   
+  }
+  .editbtn {
+    height: 27px;
+  }
+  
+  .book-item .button-group {
+    visibility: hidden;
+  }
+  
+  .book-item:hover .button-group {
+    visibility: visible;
+  }
+  

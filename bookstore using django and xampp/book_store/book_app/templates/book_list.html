@@ -1,0 +1,77 @@
+
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/booklist.css' %}">
+</head>
+<body>
+    <h1>Book List</h1>
+
+<!-- <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-fields">
+        {{ form.as_p }}
+    </div>
+    <button type="submit">Upload Book</button>
+</form> -->
+<button class="collapsible">Upload Book</button>
+<div class="form-fields collapsed">
+    <h3>Title</h3>
+</div>
+
+<script>
+    var collapsibleButton = document.querySelector('.collapsible');
+    var formFields = document.querySelector('.form-fields');
+
+    collapsibleButton.addEventListener('click', function() {
+        formFields.classList.toggle('collapsed');
+        collapsibleButton.style.display = formFields.classList.contains('collapsed') ? 'block' : 'none';
+        if (formFields.classList.contains('collapsed')) {
+            formFields.innerHTML = '<h3>Title</h3>';
+        } else {
+            formFields.innerHTML = `
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Upload Book</button>
+                </form>
+            `;
+        }
+    });
+</script>
+
+<style>
+    .form-fields.collapsed {
+        display: none;
+    }
+</style>
+
+
+
+
+
+<ul>
+    {% for book in books %}
+    <li class="book-item">
+        <img src="{{ book.image.url }}" alt="{{ book.title }}">
+        <h3>{{ book.title }}</h3>
+        <p>{{ book.author }}</p>
+        <p>{{ book.description }}</p>
+        
+        <div class="button-group">
+            <button onclick="window.location.href='{{ book.get_edit_url }}'" class="editbtn">Edit</button>
+            <form method="post" action="{% url 'delete_book' book.id %}">
+              {% csrf_token %}
+              <button type="submit">Delete</button>
+            </form>
+            
+          </div>
+    </li>
+    {% endfor %}
+</ul>
+</body>
+</html>
