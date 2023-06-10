@@ -1,0 +1,52 @@
+
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ book.title}} </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/book_detail.css' %}">
+</head>
+<body>
+    <h1>Book Detail</h1>
+
+    
+    <div class="book-item">
+        <div class="book-cover">
+            <img src="{{ book.image.url }}" alt="{{ book.title }}">
+        </div>
+
+        <div class="book-detail">
+            <h3>{{ book.title }}</h3>
+            <p>Author: {{ book.author }}</p>
+            <p>{{ book.description }}</p>
+
+            <div class="book-meta">
+                <div class="first-col">
+
+                    <span>Category: fiction/Action/Horror/Thriller<span>
+                    <span>Pages: 432<span>
+                    <span>ISBN: 12345612311</span>
+                </div>
+                <div class="second-col">
+
+                    <span>Published: 2023</span>
+                    <span>Publisher: Bamboo</span>
+                    <span>Language: English</span>
+                </div>
+            </div>
+            <div class="buy">
+                <h4>Price: Rs 600 <h4>
+                <form action="">
+                    <input type="submit" value="Add To Cart" class="btn-cart">
+                </form>
+            </div>
+        </div>
+
+     
+    </div>
+
+
+</body>
+</html>
